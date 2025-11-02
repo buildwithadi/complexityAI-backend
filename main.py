@@ -94,6 +94,10 @@ else:
 
 # --- 4. API Endpoint ---
 
+@app.get("/")
+def read_root():
+    return "Hi Uptimerobot ;)"
+
 @app.post("/analyze", response_model=AnalysisOutput)
 async def analyze_code(input: CodeInput):
     """
@@ -126,5 +130,4 @@ async def analyze_code(input: CodeInput):
 # --- 5. Run the Server ---
 
 if __name__ == "__main__":
-    print("Starting FastAPI server at http://127.0.0.1:8000")
-    uvicorn.run(app, host="127.0.0.1", port=8000)
+    uvicorn.run(app, port=8000)
