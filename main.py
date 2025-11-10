@@ -96,7 +96,16 @@ else:
 
 @app.get("/")
 def read_root():
-    return "Hi Uptimerobot ;)"
+    return """
+    <html>
+        <head>
+            <title>Welcome UpTimeRobot</title>
+        </head>
+        <body>
+            <h1>Hi UptimeRobot ;)</h1>
+        </body>
+    </html>
+    """
 
 @app.post("/analyze", response_model=AnalysisOutput)
 async def analyze_code(input: CodeInput):
