@@ -1,7 +1,0 @@
-fastapi
-uvicorn[standard]
-gunicorn
-langchain
-langchain-deepseek
-pydantic
-python-dotenv
